@@ -1,0 +1,18 @@
+{
+  "name": "hivemind-ai",
+  "private": true,
+  "scripts": {
+    "setup": "npm install && npm --prefix backend install && npm --prefix frontend install && node scripts/init-env.js",
+    "dev": "concurrently -n api,web -c blue,green \"npm --prefix backend run dev\" \"npm --prefix frontend run dev\"",
+    "build": "npm --prefix frontend run build",
+    "lint": "npm --prefix frontend run lint",
+    "start": "node backend/server.js",
+    "render-build": "npm --prefix backend install && npm --prefix frontend install --include=dev && npm --prefix frontend run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}
