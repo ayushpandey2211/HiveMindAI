@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  --bg-dark: #09090b;
+  --accent-blue: #3b82f6;
+  --accent-purple: #8b5cf6;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: white;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0f0f0f;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--accent-blue), var(--accent-purple));
+  border-radius: 10px;
+}
+
+@layer utilities {
+  .bg-blob-blue {
+    background-color: rgba(59, 130, 246, 0.15);
+    filter: blur(120px);
+  }
+  .bg-blob-purple {
+    background-color: rgba(139, 92, 246, 0.15);
+    filter: blur(120px);
+  }
+}
+
+@layer utilities {
+  .bg-blob-blue {
+    background-color: rgba(59, 130, 246, 0.15);
+    filter: blur(120px);
+  }
+  .bg-blob-purple {
+    background-color: rgba(139, 92, 246, 0.15);
+    filter: blur(120px);
+  }
+  
+  /* 🌟 New Advanced Glows */
+  .shadow-glow-blue {
+    box-shadow: 0 0 20px 2px rgba(59, 130, 246, 0.3);
+  }
+  .shadow-glow-purple {
+    box-shadow: 0 0 20px 2px rgba(139, 92, 246, 0.3);
+  }
+}
+
+/* Custom subtle spin */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.animate-spin-slow {
+  animation: spin-slow 20s linear Infinity;
+}
+
+.markdown-content ul, .markdown-content ol {
+  padding-left: 1rem;
+}
+
+.markdown-content pre {
+  margin: 1rem 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Ensure long words or links don't break the bubble */
+.markdown-content {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
